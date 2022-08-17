@@ -21,7 +21,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-12">
-                            <form class="needs-validation" novalidate action="add-persona" method="post"
+                            <form class="needs-validation" novalidate action="add-user" method="post"
                                   enctype="multipart/form-data">
                                 <div class="form-group mb-3">
                                     <div class="row">

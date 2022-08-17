@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%--
   Created by IntelliJ IDEA.
   User: JULIO
@@ -5,7 +7,9 @@
   Time: 05:30 p. m.
   To change this template use File | Settings | File Templates.
 --%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@page pageEncoding="UTF-8" %>
 <html>
 <head>
     <title>Personas</title>
@@ -26,7 +30,7 @@
                             <h2>PERSONAS</h2>
                         </div>
                         <div class="col-3 text-end">
-                            <a href="create-persona" class="btn btn-outline-success">Registrar usuario</a>
+                            <a href="create-user" class="btn btn-outline-success">Registrar usuario</a>
                         </div>
                     </div>
                 </div>
@@ -43,7 +47,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <c:forEach var="personas" items="${personas}" varStatus="status">
+                        <c:forEach var="persona" items="${personas}" varStatus="status">
                             <tr>
                                 <td>
                                     <c:out value="${status.count}"></c:out>
@@ -61,13 +65,10 @@
                                     <c:out value="${persona.birthday}"></c:out>
                                 </td>
                                 <td>
-                                    <form action="save-persona" method="post">
+                                    <a href="get-user?id=${persona.id}" class="btn btn-warning btn-sm">EDITAR</a>                                  <input type="hidden" value="${persona.id}" name="id"/>
+                                    <form action="delete-user" method="post">
                                         <input type="hidden" value="${persona.id}" name="id"/>
-                                        <button type="submit" class="btn btn-warning btn-sm">editar</button>
-                                    </form>
-                                    <form action="delete-persona" method="post">
-                                        <input type="hidden" value="${persona.id}" name="id"/>
-                                        <button type="submit" class="btn btn-danger btn-sm">eliminar</button>
+                                        <button type="submit" class="btn btn-danger btn-sm">ELIMINAR</button>
                                     </form>
                                 </td>
                             </tr>

@@ -8,6 +8,6 @@
 <h1><%= "REGISTRO DE PERSONAS" %>
 </h1>
 <br/>
-<a href="get-personas">INICIAR</a>
+<a href="get-usuarios">INICIAR</a>
 </body>
 </html>
